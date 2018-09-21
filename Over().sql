@@ -1,3 +1,4 @@
+--Simple example of a Running Total using Over()
 select lname, fname, salary,
 sum (salary)
 OVER (order by fname) running_total
