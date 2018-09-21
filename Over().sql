@@ -6,6 +6,7 @@ from employee
 order by fname
 ;
 
+--No Order by in Over()
 select d.DEPT_NAME, sum(e.salary) over()
 from employee e, department d
 where e.dept_id = d.dept_id;
