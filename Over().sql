@@ -28,9 +28,14 @@ from employee
 order by dept_id, lname, fname
 ;
 
---Using the keyword - rows 2 Preceding
+--Adding a Rows sliding windowing clause
 select lname, fname, dept_id, salary,
 sum(salary) over(partition by dept_id order by lname, fname rows 2 preceding) prec_sum_salary
 from employee
 order by dept_id, lname, fname
 ;
+
+--Using a Range sliding window clause
+select fname, lname, salary, join_date,
+sum(salary) over(partition by dept_id order by join_date range 90 preceding) range_sum_sal
+from employee;
