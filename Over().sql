@@ -11,12 +11,7 @@ select d.DEPT_NAME, sum(e.salary) over()
 from employee e, department d
 where e.dept_id = d.dept_id;
 
-select fname, lname, salary, e.dept_id, sum(salary) over(order by fname) running_sal, sum(salary) over(partition by d.dept_id order by e.fname) 
-from employee e
-left join department d on e.dept_id = d.dept_id
-order by dept_id, fname
-;
-
+--Running total of salary over departments
 select lname, fname, dept_id, salary,
 sum(salary) over(order by salary) running_sal,
 SUM (salary)
@@ -25,9 +20,17 @@ from employee
 order by dept_id, salary, lname, fname
 ;
 
+--Different order by having a different effect on the result
 select lname, fname, dept_id, salary,
 SUM (salary)
 OVER (PARTITION BY dept_id ORDER BY salary) department_total
+from employee
+order by dept_id, lname, fname
+;
+
+--Using the keyword - rows 2 Preceding
+select lname, fname, dept_id, salary,
+sum(salary) over(partition by dept_id order by lname, fname rows 2 preceding) prec_sum_salary
 from employee
 order by dept_id, lname, fname
 ;
