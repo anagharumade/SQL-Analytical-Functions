@@ -39,3 +39,8 @@ order by dept_id, lname, fname
 select fname, lname, salary, join_date,
 sum(salary) over(partition by dept_id order by join_date range 90 preceding) range_sum_sal
 from employee;
+
+--Using between with Range
+select fname, lname, salary, join_date,
+sum(salary) over(partition by dept_id order by join_date range between 90 preceding and 90 following) range_sum_sal
+from employee;
