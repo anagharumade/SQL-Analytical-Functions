@@ -1,12 +1,10 @@
 /*
 
-Methods of performing Inner Join
+Examples of performing Joins
 
 */
 
 --Without using keyword "INNER JOIN"
-select * from employee e , department d where E.DEPT_ID = D.DEPT_ID;
-
 select * from employee e
 join department d on E.DEPT_ID = D.DEPT_ID;
 

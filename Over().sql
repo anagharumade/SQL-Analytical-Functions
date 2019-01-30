@@ -1,7 +1,7 @@
---Simple example of a Running Total using Over()
-select lname, fname, salary,
-sum (salary)
-OVER (order by fname) running_total
+--Example of a Running Total using Over()
+select lname Last_Name, fname First_Name, salary,
+  sum (salary)
+  OVER (order by fname) running_total
 from employee
 order by fname
 ;
