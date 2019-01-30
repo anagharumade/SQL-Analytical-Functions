@@ -1,5 +1,5 @@
 --Using Group By
-select nvl(to_char(D.DEPT_ID), '-'), count(*)
+select nvl(to_char(D.DEPT_ID), '-') Department_ID, count(*) Num_Of_Employees
 from employee e, department d
 where e.dept_id = d.dept_id
 group by D.DEPT_ID
