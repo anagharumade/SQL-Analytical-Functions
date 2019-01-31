@@ -4,6 +4,18 @@ This Repository contains SQL Queries for Analytical Functions
 ## Pre-Requisites
 The tables used in these queries can be created using this SQL file: [Setup.sql](https://github.com/anagharumade/SQL-Analytical-Functions/blob/master/Setup.sql)
 
+## Contents:
+1. LISTAGG Function
+2. OVER Function
+3. Wildcards
+4. Aggregating Functions
+   - Group By
+   - Sum and Average
+5. Joins
+   - Inner Join
+   - Left Join
+   - Right Join
+
 ### LISTAGG function:
 
 The SQL code for this section can be found here: [ListAgg().sql](https://github.com/anagharumade/SQL-Analytical-Functions/blob/master/ListAgg().sql)
